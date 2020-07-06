@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <title>List Posting</title>
+    </head>
+<body>
+        <h2>Posting List</h2>
+
+        <table th:if="${ not #lists.isEmpty(jobSeekers) }" border=1>
+        <tr>
+            <td>Seeker Id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Contact No</td>
+            <td>Email Id</td>
+            <td>Location</td>
+            <td>Percent</td>
+        </tr>
+        <tr th:each="jobSeeker : ${jobSeekers}">
+            <td th:text="${jobSeeker.id}"></td>
+            <td th:text="${jobSeeker.fName}"></td>
+            <td th:text="${jobSeeker.lName}"></td>
+            <td th:text="${jobSeeker.contactNum}"></td>
+            <td th:text="${jobSeeker.email}"></td>
+            <td th:text="${jobSeeker.location}"></td>
+            <td th:text="${jobSeeker.percent}"></td>
+        </tr>
+    </table>
+</body>
+</html>
